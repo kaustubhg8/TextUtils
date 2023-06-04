@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 
 export default function Textform(props) {
     const handleUPClick = ()=> {
-        console.log("UpperCase was clicked" + text);
+        // console.log("UpperCase was clicked" + text);
         let newText = text.toUpperCase();
         setText(newText);
     }
     const handleOnChange = (event)=> {
-        console.log("Handle on change");    // this is using arrow function
+        // console.log("Handle on change");    // this is using arrow function
         setText(event.target.value);
     }
     // function handleOnChange(e) {
