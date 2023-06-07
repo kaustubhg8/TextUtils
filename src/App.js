@@ -7,22 +7,24 @@ import React, { useState } from "react";
 
 function App() {
   const [mode, setmode] = useState("light");
-  const [first, setfirst] = useState("Initial Condition")
+  const [first, setfirst] = useState(null)
 
-  const showAlert = (message) =>{
-    setfirst(message);
+  const showAlert = (message, type) =>{
+    setfirst({msg: message,
+    type: type
+    });
   }
 
   const toggleMode = () => {
     if (mode === "light") {
       setmode("dark");
       document.body.style.backgroundColor="#082c6c";
-      showAlert("This from showAlert IF statement")
+      showAlert("Dark mode is enabled","Success")
 
     } else {
       setmode("light");
       document.body.style.backgroundColor="white";
-      showAlert("This from showAlert ELSE statement")
+      showAlert("Light mode is enabled", "Success")
 
     }
   };
