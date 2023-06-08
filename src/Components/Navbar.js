@@ -47,13 +47,42 @@ export default function Navbar(props) {
           </form> */}
         </div>
       </div>
-      <div className={`form-check form-switch text-${props.mode==="light"?"dark":"light"}`} onClick={props.toggleMode}>
+      <div className="form-check1" onClick={props.switchMode} style={{color: props.mode==='dark'?'white':'black'}}>
+        <input
+          className="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+        />
+
+        <label className="form-check-label" htmlFor="flexRadioDefault1" >
+          Orange mode radio
+        </label>
+
+      </div>
+      <div className="form-check2">
+        <input
+          className="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault2"
+          checked
+        />
+        <label className="form-check-label" htmlFor="flexRadioDefault2">
+          Default checked radio
+        </label>
+      </div>
+      <div
+        className={`form-check form-switch text-${
+          props.mode === "light" ? "dark" : "light"
+        }`}
+        onClick={props.toggleMode}
+      >
         <input
           className="form-check-input"
           type="checkbox"
           role="switch"
           id="flexSwitchCheckDefault"
-          
         />
         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
           Enable Dark Mode
