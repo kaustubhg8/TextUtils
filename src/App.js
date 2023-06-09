@@ -1,6 +1,6 @@
 import "./App.css";
 import AlertComp from "./Components/AlertComp";
-import About from "./Components/About";
+// import About from "./Components/About";
 import Navbar from "./Components/Navbar";
 import Textform from "./Components/Textform";
 import React, { useState } from "react";
