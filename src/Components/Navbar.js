@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -8,9 +8,9 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" href="#">
+        <li className="navbar-brand" href="#">
           {props.title}
-        </Link>
+        </li>
         <button
           className="navbar-toggler"
           type="button"
