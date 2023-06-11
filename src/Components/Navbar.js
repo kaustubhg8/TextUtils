@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <nav
-      className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
+      className={`navbar navbar-expand-lg bg-${props.mode === "dark" ? "dark" : "white"} shadow-lg navbar-${props.mode}`}
     >
       <div className="container-fluid">
         <li className="navbar-brand" href="#">

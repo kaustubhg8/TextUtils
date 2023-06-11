@@ -88,8 +88,8 @@ export default function Textform(props) {
             rows="8"
             // style={{backgroundColor: "grey"}}
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "grey",
-              color: props.mode === "dark" ? "green" : "white",
+              backgroundColor: props.mode === "dark" ? "#071358" : "white",
+              color: props.mode === "dark" ? "white" : "black",
             }}
           ></textarea>
         </div>
