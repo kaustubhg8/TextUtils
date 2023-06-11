@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 export default function Textform(props) {
   const handleUPClick = () => {
     // console.log("UpperCase was clicked" + text);
@@ -72,8 +71,13 @@ export default function Textform(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <div className="container" style={{color: props.mode==='dark'?'white':'black'}}>
-      <h1 style={{color: props.mode==='dark'?'white':'white' }}>{props.heading}</h1>
+      <div
+        className="container"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
+        <h1>
+          {props.heading}
+        </h1>
         <div className="my-2">
           <textarea
             className="form-control"
@@ -82,42 +86,50 @@ export default function Textform(props) {
             id="mybox"
             rows="8"
             // style={{backgroundColor: "grey"}}
-            style={{backgroundColor: props.mode==='dark'?'grey':'grey',
-                    color: props.mode==='dark'?'green':'white'}}
-
+            style={{
+              backgroundColor: props.mode === "dark" ? "grey" : "grey",
+              color: props.mode === "dark" ? "green" : "white",
+            }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUPClick}>
+        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleUPClick}>
           Convert to upper case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLPClick}>
+        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleLPClick}>
           Convert to lower case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
-        <button
-          className="btn btn-primary mx-1"
+        <button style={{ color: props.mode === "dark" ? "white" : "black" }}
+          className="btn btn-primary mx-1 my-1"
           onClick={handleRemoveExtraSpacesClick}
         >
           Remove extra spaces from the Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopyClick}>
+        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1" onClick={handleCopyClick}>
           Copy Text
         </button>
         {/* <button className="btn btn-primary mx-1" onClick={handleRemoveNumersClick}>Remove numbers from the Text</button> */}
       </div>
-      <div className="container my-4" style={{color: props.mode==='dark'?'white':'black'}}>
+      <div
+        className="container my-4"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} caracters
+          {text.split(" ").filter((element) =>{return element.length!==0}).length} words and {text.length} caracters
         </p>
         <p>
-          Time required to read the para = {text.split(" ").length * 0.008}{" "}
+          Time required to read the para = {text.split(" ").filter((element) =>{return element.length!==0}).length * 0.008}{" "}
           Minuts{" "}
         </p>
         <h2>Preview</h2>
-        <p>{text.length>0?text:"Enter text inthe text box above to preview"}</p>
+        <p>
+          {text.length > 0
+            ? text
+            : "Nothing to preview"}
+        </p>
       </div>
     </>
   );

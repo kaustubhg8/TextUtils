@@ -23,18 +23,18 @@ function App() {
     }, 1500);
   };
 
-  const switchMode = () => {
-    if (mode === "light") {
-      setmode("dark");
-      document.body.style.backgroundColor = "orange";
-      showAlert("Orange mode is enabled", "success");
-      document.title = "TextUtils hahaha";
-    } else {
-      setmode("light");
-      document.body.style.backgroundColor = "white";
-      showAlert("Light mode is enabled", "success");
-    }
-  };
+  // const switchMode = () => {
+  //   if (mode === "light") {
+  //     setmode("dark");
+  //     document.body.style.backgroundColor = "orange";
+  //     showAlert("Orange mode is enabled", "success");
+  //     document.title = "TextUtils hahaha";
+  //   } else {
+  //     setmode("light");
+  //     document.body.style.backgroundColor = "white";
+  //     showAlert("Light mode is enabled", "success");
+  //   }
+  // };
 
   const toggleMode = () => {
     if (mode === "light") {
@@ -56,7 +56,6 @@ function App() {
           title="TextUtils"
           mode={mode}
           toggleMode={toggleMode}
-          switchMode={switchMode}
         />
         <AlertComp alert={first} />
         <div className="container pt-3">
@@ -64,7 +63,7 @@ function App() {
             <Route exact path="/about" element={<About />}></Route>
             <Route exact path="/" element={<Textform showAlert={showAlert} heading="Enter the text to analyze" />}></Route>
           </Routes> */}
-          <Textform showAlert={showAlert} heading="Enter the text to analyze" />
+          <Textform toggleMode={toggleMode} mode={mode} showAlert={showAlert} heading="Enter the text to analyze" />
         </div>
       {/* </BrowserRouter> */}
     </>
