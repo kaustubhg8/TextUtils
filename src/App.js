@@ -41,12 +41,12 @@ function App() {
       setmode("dark");
       document.body.style.backgroundColor = "#082c6c";
       showAlert("Dark mode is enabled", "success");
-      document.title = "TextUtils hahaha dark";
+      document.title = "TextUtils app";
     } else {
       setmode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode is enabled", "success");
-      document.title = "TextUtils hahaha light";
+      document.title = "TextUtils app";
     }
   };
   return (
