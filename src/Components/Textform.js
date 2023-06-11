@@ -64,6 +64,7 @@ export default function Textform(props) {
     // console.log("I'm a copy");
     let text = document.getElementById("mybox");
     text.select();
+    document.getSelection().removeAllRanges();
     navigator.clipboard.writeText(text.value);
     props.showAlert("Text copied", "success");
   };
@@ -92,22 +93,22 @@ export default function Textform(props) {
             }}
           ></textarea>
         </div>
-        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleUPClick}>
+        <button disabled={text.length===0} style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleUPClick}>
           Convert to upper case
         </button>
-        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleLPClick}>
+        <button disabled={text.length===0} style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleLPClick}>
           Convert to lower case
         </button>
-        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>
+        <button disabled={text.length===0} style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
-        <button style={{ color: props.mode === "dark" ? "white" : "black" }}
+        <button disabled={text.length===0} style={{ color: props.mode === "dark" ? "white" : "black" }}
           className="btn btn-primary mx-1 my-1"
           onClick={handleRemoveExtraSpacesClick}
         >
           Remove extra spaces from the Text
         </button>
-        <button style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1" onClick={handleCopyClick}>
+        <button disabled={text.length===0} style={{ color: props.mode === "dark" ? "white" : "black" }} className="btn btn-primary mx-1" onClick={handleCopyClick}>
           Copy Text
         </button>
         {/* <button className="btn btn-primary mx-1" onClick={handleRemoveNumersClick}>Remove numbers from the Text</button> */}
